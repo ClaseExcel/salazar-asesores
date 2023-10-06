@@ -1,0 +1,147 @@
+.info-empresas p {
+    display: flex;
+    align-items: center;
+}
+
+input:disabled {
+    background-color: #e4e4e4;
+}
+
+select:disabled {
+    background-color: #e4e4e4;
+}
+
+#calendario-agenda {
+    overflow-y: scroll;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width:768px) {
+
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    #citaModal,
+    #citaEditar,
+    #actividadModal {
+        padding: 2rem;
+        padding-top: 25rem;
+    }
+
+
+}
+
+@media screen and (min-width:1024px) and (max-width:2560px) {
+
+    #citaModal,
+    #citaEditar,
+    #actividadModal {
+        padding: 8rem;
+        padding-top: 25rem;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    #ShowCitaModal,
+    #citaEditar,
+    #actividadModal {
+        padding: 2rem;
+        padding-top: 25rem;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:2560px) {
+
+    #ShowCitaModal,
+    #citaEditar,
+    #actividadModal {
+        padding: 8rem;
+        padding-top: 25rem;
+        padding-right: 150px !important;
+    }
+    
+    .logo{
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #555555 !important;
+    border-radius: 20px !important;
+    color: inherit;
+    margin-right: 3px !important;
+    margin-bottom: 20px;
+}
+
+.event-class-1 .fc-content {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.event-class-1 {
+    pointer-events: none !important;
+    display: inline-block;
+}
+
+#calendario-actividades {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 425px) {
+    #calendario-actividades {
+        max-width: 400px;
+        /* Ajusta el ancho máximo según tus necesidades */
+    }
+
+     .fc-toolbar {
+        display: unset !important;
+    }
+
+    .fc-right {
+        margin-bottom: 20px;
+    }
+}
