@@ -17,24 +17,76 @@ class CargoSeeder extends Seeder
         $cargos = [
             [
                 'id'   => 1,
-                'nombre'  => 'Contador senior',
+                'nombre'  => 'Socio',
             ],
             [
                 'id'   => 2,
-                'nombre'  => 'Contador junior',
+                'nombre'  => 'Gerente de contabilidad',
             ],
             [
                 'id'   => 3,
-                'nombre'  => 'Auxiliar contable',
+                'nombre'  => 'Gerente de auditoria',
             ],
             [
                 'id'   => 4,
-                'nombre'  => 'Asistente Contable',
+                'nombre'  => 'Coordinador contable',
             ],
             [
                 'id'   => 5,
-                'nombre'  => 'Cliente',
+                'nombre'  => 'Coordinador de cumplimiento',
             ],
+            [
+                'id'   => 6,
+                'nombre'  => 'Analista contable',
+            ],
+            [
+                'id'   => 7,
+                'nombre'  => 'Analista de nómina',
+            ],
+            [
+                'id'   => 8,
+                'nombre'  => 'Analista de impuestos',
+            ],
+            [
+                'id'   => 9,
+                'nombre'  => 'Analista de tesoreria',
+            ],
+            [
+                'id'   => 10,
+                'nombre'  => 'Senior de auditoria',
+            ],
+            [
+                'id'   => 11,
+                'nombre'  => 'Analista de SGSST',
+            ],
+            [
+                'id'   => 12,
+                'nombre'  => 'Abogado',
+            ],
+            [
+                'id'   => 13,
+                'nombre'  => 'Auxiliar contable',
+            ],
+            [
+                'id'   => 14,
+                'nombre'  => 'Auxiliar impuestos',
+            ],
+            [
+                'id'   => 15,
+                'nombre'  => 'Asistentes de auditoria',
+            ],
+            [
+                'id'   => 16,
+                'nombre'  => 'Auxiliares de nómina',
+            ],
+            [
+                'id'   => 17,
+                'nombre'  => 'Auxiliar de tesoreria',
+            ],
+            [
+                'id'   => 18,
+                'nombre'  => 'Cliente',
+            ]
         ];
 
         Cargo::insert($cargos);

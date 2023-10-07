@@ -17,28 +17,20 @@ class TipoRequerimientoSeeder extends Seeder
         $tipo_requerimientos = [
             [
                 'id'   => 1,
-                'nombre'  => 'Novedades software contable',
+                'nombre'  => 'Servicios de Nómina',
             ],
             [
                 'id'   => 2,
-                'nombre'  => 'Asesoria contable',
+                'nombre'  => 'Servicios integrales de Contabilidad',
             ],
             [
                 'id'   => 3,
-                'nombre'  => 'Asesoria tributaria y/o aduanera',
+                'nombre'  => 'Servicios de auditoría',
             ],
             [
                 'id'   => 4,
-                'nombre'  => 'Asesoria comercial y/o societaria',
+                'nombre'  => 'Impuestos y certificados',
             ],  
-            [
-                'id'   => 5,
-                'nombre'  => 'Revisoria fiscal y/o auditoria',
-            ],
-            [
-                'id'   => 6,
-                'nombre'  => 'Otro',
-            ],
         ];
 
         TipoRequerimiento::insert($tipo_requerimientos);
