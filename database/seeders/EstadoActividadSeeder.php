@@ -21,7 +21,7 @@ class EstadoActividadSeeder extends Seeder
             ],
             [
                 'id'   => 2,
-                'nombre'  => 'En proceso',
+                'nombre'  => 'Pendiente',
             ],
             [
                 'id'   => 3,
@@ -37,11 +37,11 @@ class EstadoActividadSeeder extends Seeder
             ],
             [
                 'id'   => 6,
-                'nombre'  => 'Vencido',
+                'nombre'  => 'Terminado',
             ],
             [
                 'id'   => 7,
-                'nombre'  => 'Finalizado',
+                'nombre'  => 'Cumplida',
             ],
         ];
 
