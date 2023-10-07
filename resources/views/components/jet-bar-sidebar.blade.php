@@ -2,7 +2,7 @@
     x-data="{ open: false }">
     <div class="flex-shrink-0 px-4 lg:px-8 py-4 flex flex-row items-center justify-between logo">
         <!-- App Title -->
-        <a href="{{ url('/') }}"><img src="{{ asset('/img/logos/logo-salazar.svg') }}" alt="" class="w-32 h-40"
+        <a href="{{ url('/') }}"><img src="{{ asset('/img/logos/logo-salazar.svg') }}" alt="" class="w-40 h-32"
                 id="logo"></a>
         <!-- End App Title -->
         <button class="rounded-lg lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -22,7 +22,7 @@
 
 
         {{-- Dashboard --}}
-        <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('dashboard') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('dashboard') ? 'bg-blue-700' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-700 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
+        <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('dashboard') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('dashboard') ? 'bg-blue-500' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-500 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
             href="{{ route('dashboard') }}">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6 flex mr-2">
@@ -36,12 +36,13 @@
         @if (in_array(Auth::user()->rol_id, [1, 8]))
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
-                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left  text-gray-800 bg-transparent rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
+                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left  text-gray-800 bg-transparent rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
                     <span class="flex justify-start text-lg"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex mr-2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                        </svg> Usuarios</span>
+                        </svg> 
+                        Usuarios</span>
 
 
                 </button>
@@ -53,16 +54,16 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg z-20">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.empleados.index') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex mr-2">
+                                    stroke-width="1.5" stroke="currentColor" class="w-8 h-8 flex mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                                 </svg>
 
-                                Empleados Estrategia</span>
+                                Empleados Salzar Asesores</span>
                         </a>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
         @if (in_array(Auth::user()->rol_id, [1, 8]))
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
-                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left text-gray-800 bg-transparent rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
+                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left text-gray-800 bg-transparent rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
                     <span class="flex justify-start text-lg"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex mr-2">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -89,7 +90,7 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg z-20">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.empresas.index') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -101,7 +102,7 @@
                                 Empresas</span>
 
                         </a>
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.empleado-clientes.index') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -110,7 +111,7 @@
                                         d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                                 </svg>
 
-                                Usuario cliente</span>
+                                Usuario</span>
 
                         </a>
                     </div>
@@ -121,7 +122,7 @@
         @if (in_array(Auth::user()->rol_id, [1, 2, 3, 4, 5, 8]))
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
-                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent text-gray-800 rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
+                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent text-gray-800 rounded-lg lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
                     <span class="flex justify-start text-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex mr-2">
@@ -139,7 +140,7 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg z-20">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.agendas.index') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -150,7 +151,7 @@
                                 Disponibilidad Agenda</span>
                         </a>
 
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.agendas.show', Auth::user()->id) }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -167,7 +168,7 @@
         @endif
 
         @if (in_array(Auth::user()->rol_id, [1, 2]))
-            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.requerimientos.empleado.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.requerimientos.empleado.index') ? 'bg-blue-700' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-700 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
+            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.requerimientos.empleado.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.requerimientos.empleado.index') ? 'bg-blue-500' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-500 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
                 href="{{ route('admin.requerimientos.empleado.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 mr-2">
@@ -178,7 +179,7 @@
         @endif
 
         @if (in_array(Auth::user()->rol_id, [1, 2, 3, 4, 5, 8]))
-            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.requerimientos.empleado.show') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.requerimientos.empleado.show') ? 'bg-blue-700' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-700 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
+            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.requerimientos.empleado.show') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.requerimientos.empleado.show') ? 'bg-blue-500' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-500 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
                 href="{{ route('admin.requerimientos.empleado.show', Auth::user()->id) }}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-10 h-10 mr-2">
@@ -190,7 +191,7 @@
         @endif
 
         @if (in_array(Auth::user()->rol_id, [6, 7]))
-            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.citas.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.citas.index') ? 'bg-blue-700' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-700 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
+            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.citas.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.citas.index') ? 'bg-blue-500' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-500 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
                 href="{{ route('admin.citas.index') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 flex mr-2">
@@ -203,7 +204,7 @@
 
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
-                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg  text-gray-800 lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
+                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg  text-gray-800 lg:block hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline">
                     <span class="flex justify-start text-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
@@ -221,7 +222,7 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg z-20">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.requerimientos.cliente.create') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -233,7 +234,7 @@
                                 Solicitar requerimiento</span>
                         </a>
 
-                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                             href="{{ route('admin.requerimientos.cliente.index') }}">
                             <span class="flex justify-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -252,7 +253,7 @@
 
         {{-- Actividades --}}
         @if (in_array(Auth::user()->rol_id, [1, 2, 3, 4, 5, 8, 6, 7]))
-            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.actividad_cliente.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.actividad_cliente.index') ? 'bg-blue-700' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-700 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
+            <a class="block px-4 py-2 mt-2 text-lg font-semibold {{ request()->routeIs('admin.actividad_cliente.index') ? 'text-neutral-50' : 'text-gray-900' }} flex justify-start {{ request()->routeIs('admin.actividad_cliente.index') ? 'bg-blue-500' : 'bg-transparent' }} rounded-lg hover:text-gray-100 hover:bg-blue-500 focus:text-neutral-50 focus:border-blue-300 focus:outline-none focus:shadow-outline"
                 href="{{ route('admin.actividad_cliente.index') }}">
                 <span class="flex justify-start">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -270,7 +271,7 @@
 
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
-                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg lg:block text-gray-800 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
+                    class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg lg:block text-gray-800 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-700 focus:outline-none focus:shadow-outline">
                     <span class="flex justify-start text-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex mr-2">
@@ -289,7 +290,7 @@
                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg z-20">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
                         @if (in_array(Auth::user()->rol_id, [1, 2]))
-                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                                 href="{{ route('admin.informe-empresa.index') }}">
                                 <span class="flex justify-start">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -302,7 +303,7 @@
                                     Actividades por empresa</span>
                             </a>
 
-                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                                 href="{{ route('admin.informe-empresa-usuario.index') }}">
                                 <span class="flex justify-start">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -317,7 +318,7 @@
                         @endif
 
                         @if (in_array(Auth::user()->rol_id, [6, 7]))
-                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            <a class="block px-4 py-2 mt-2 text-lg font-semibold bg-transparent rounded-lg text-gray-800 lg:mt-0 hover:text-gray-100 focus:text-gray-100 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:shadow-outline"
                                 href="{{ route('admin.informe-usuario.index') }}">
                                 <span class="flex justify-start">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
