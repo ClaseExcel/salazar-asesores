@@ -24,7 +24,7 @@
 
 <body>
     <div style="display:flex; justify-content:center; margin-top:50px; align-items:center;">
-        <img style="display: block; margin-left: auto; margin-right:auto;" src="{{ asset('img/logos/logo-salazar.svg') }}" alt="" width="400px" height="120px">
+        <img style="display: block; margin-left: auto; margin-right:auto;" src="https://firebasestorage.googleapis.com/v0/b/salazarasesores-d8362.appspot.com/o/logo-salazar.svg?alt=media&token=17d1f3a8-fe4b-4b64-8f96-0cc317288156" alt="" width="400px" height="120px">
     </div>
 
     <div class="content" style="text-align:center;">

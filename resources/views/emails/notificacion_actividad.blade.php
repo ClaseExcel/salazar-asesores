@@ -134,7 +134,7 @@ a[x-apple-data-detectors] {
                   <td align="left" style="padding:0;Margin:0;width:670px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px"><img src="{{ asset('img/logos/logo-salazar.svg') }}" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="300"></td>
+                      <td align="center" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px;font-size:0px"><img src="https://firebasestorage.googleapis.com/v0/b/salazarasesores-d8362.appspot.com/o/logo-salazar.svg?alt=media&token=17d1f3a8-fe4b-4b64-8f96-0cc317288156" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="300"></td>
                      </tr>
                      <tr>
                       <td align="center" height="40" style="padding:0;Margin:0"></td>
