@@ -13,7 +13,7 @@ class envioRequerimiento extends Mailable
 
     public $consecutivo, $tipo_requerimiento;
 
-    public $subject = "Solicitud de revisión de requerimiento - Estrategia Contributo";
+    public $subject = "Solicitud de revisión de requerimiento - Salazar Asesores";
 
     /**
      * Create a new message instance.

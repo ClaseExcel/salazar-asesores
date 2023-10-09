@@ -13,7 +13,7 @@ class seguimientoRequerimientos extends Mailable
     use Queueable, SerializesModels;
     public $consecutivo, $observacion, $estado_requerimiento, $usuario_cliente, $estado;
 
-    public $subject = "Notificación seguimiento de tu requerimiento - Estrategia Contributo";
+    public $subject = "Notificación seguimiento de tu requerimiento - Salazar Asesores";
 
     /**
      * Create a new message instance.

@@ -23,8 +23,8 @@
 </head>
 
 <body>
-    <div style="display:flex; justify-content:center;">
-        <img src="https://firebasestorage.googleapis.com/v0/b/estrategia-contributo.appspot.com/o/Logo_1.png?alt=media&token=74b384f8-020c-4416-bf04-5a401679cf86" alt="" width="400px" height="120px">
+    <div style="display:flex; justify-content:center; margin-top:50px; align-items:center;">
+        <img style="display: block; margin-left: auto; margin-right:auto;" src="{{ asset('img/logos/logo-salazar.svg') }}" alt="" width="400px" height="120px">
     </div>
 
     @if ($estado_requerimiento == 3)
@@ -67,10 +67,9 @@
         </div><br>
     @endif
 
-
-    <small>
-        Cualquier duda o información comunicarse por medio de este correo. <br>
-        Saludos cordiales, Estrategia Contributo
+    <small style="display:flex; justify-content:center; margin-top:50px; align-items:center;">
+        Este correo es exclusivamente informativo. <br>
+        Saludos, Salzar Asesores
     </small>
 </body>
 

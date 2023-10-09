@@ -13,7 +13,7 @@ class asociadoRequerimiento extends Mailable
 
     public $consecutivo, $usuario_cliente, $tipo_requerimiento;
 
-    public $subject = "Notificación solicitud de requerimiento - Estrategia Contributo";
+    public $subject = "Notificación solicitud de requerimiento - Salazar Asesores";
 
     /**
      * Create a new message instance.

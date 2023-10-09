@@ -13,7 +13,7 @@ class restablecerContraseña extends Mailable
 
     public $email, $password, $token;
 
-    public $subject = "Notificación de creación de usuario - Estrategia Contributo";
+    public $subject = "Notificación de creación de usuario - Salazar Asesores";
 
     /**
      * Create a new message instance.
