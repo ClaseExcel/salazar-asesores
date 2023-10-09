@@ -87,9 +87,13 @@ class AgendaController extends Controller
      */
     public function show($id)
     {
-        $usuario = Auth::user()->id;
 
-        $agenda = AgendaEmpleado::select('*')->where('user_id', $usuario)->get();
+        if($id != Auth::user()->id) {
+            abort(401, 'No autorizado');
+        }
+
+        $agenda = AgendaEmpleado::select('*')->where('user_id', $id)->get();
+
         $citas = Cita::all();
 
         $events = [];
