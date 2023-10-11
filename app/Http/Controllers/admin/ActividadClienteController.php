@@ -403,7 +403,7 @@ class ActividadClienteController extends Controller
         $message .= 'La fecha de vencimiento era el '. $date .'.<br><br>';
         $message .= 'Si ya ha completado la actividad o ha tomado medidas al respecto, le agradecemos su diligencia. ';
         $message .= 'Si necesita alguna extensión de plazo o asistencia adicional, no dude en ponerse en contacto con nosotros. <br><br>';
-        $message .= 'Atentamente, Estrategia Contributo.';
+        $message .= 'Atentamente, Salazar Asesores.';
         return $message;
     }
 
@@ -413,7 +413,7 @@ class ActividadClienteController extends Controller
         $message .= 'Para su conveniencia, le sugerimos revisar el estado actual de la actividad y asegurarse de que esté en camino de cumplirse antes del '. $date .'.<br><br>';
         $message .= 'Si necesita más tiempo, recursos adicionales o tiene alguna pregunta sobre la actividad, estamos aquí para ayudar. ';
         $message .= 'No dude en ponerse en contacto con nosotros para cualquier tipo de apoyo que pueda requerir. <br><br>Gracias por su atención y colaboración.<br><br>';
-        $message .= 'Atentamente, Estrategia Contributo.';
+        $message .= 'Atentamente, Salazar Asesores.';
         return $message;
     }
 
