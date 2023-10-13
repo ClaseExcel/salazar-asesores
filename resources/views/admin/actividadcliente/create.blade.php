@@ -262,5 +262,62 @@
             </form>
         </div>
     </x-jet-bar-container>
+    <x-jet-bar-container>
+        <div class="p-4 bg-white border rounded-lg shadow-md mt-6">
+            @if (session('message2'))
+                    <div class="row px-2">
+                        <div class="alert alert-{{ session('color') }} border-0 alert-dismissible fade show d-flex align-items-center"
+                            role="alert">
+                            <div class="d-flex flex-grow-1">
+                                <div>
+                                    <i class="fa-solid fa-circle-info"></i> <b>{{ session('message2') }}</b>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            <div class="container mx-auto flex justify-between mb-4">
+                <a href="{{ route('admin.actividad_cliente.masivoactividades') }}" target="_blank" class="rounded-full bg-blue-500 text-neutral-50 px-4 py-2 font-semibold shadow-md hover:bg-blue-700">Descargar Plantilla</a>
+            </div>
+                <form method="POST" action="{{ route('admin.actividad_cliente.importExcel') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="flex w-full">
+                        <div class="relative">
+                            <label class="block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400" for="masivo">Masivo</label>
+                            <input type="file" id="masivo" name="masivo"
+                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                />
+                        </div>
+                    </div>
+                    <div class="mt-3 flex justify-end">
+                        <button
+                            class="rounded-full bg-blue-500 text-neutral-50 px-4 py-2 font-semibold shadow-md hover:bg-blue-700">Enviar</button>
+                    </div>
+                    
+                    {{-- <div class="flex items-center justify-center w-full">
+                        <div class="relative">
+                            <label class="block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400" for="documento_5">Adjunto 5</label>
+                            <input type="file" id="documento_5" name="documento_5"
+                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                style="width: 900px; height: 40px; /* Ajusta la altura según tus necesidades */"/>
+                        </div> --}}
+                        {{-- <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                </svg>
+                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                            </div>
+                            <input id="dropzone-file" type="file" class="hidden" />
+                        </label> --}}
+                    {{-- </div>  --}}
+ 
+                </form>
+        </div>
+    </x-jet-bar-container>
     <script src="{{ asset('js/actividadcliente/show.js') }}" defer></script>
 </x-app-layout>

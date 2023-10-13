@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Exports\ActividadClienteExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateActividadClienteRequest;
 use App\Http\Requests\UpdateActividadClienteRequest;
+use App\Jobs\ExcelActividadClienteBatchImport;
 use App\Mail\NotificacionActividades;
 use App\Models\Actividad;
 use App\Models\ActividadCliente;
@@ -16,11 +18,15 @@ use App\Models\Responsable;
 use App\Models\User;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Carbon\Carbon;
+use Facade\FlareClient\Http\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Facades\Excel;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class ActividadClienteController extends Controller
 {
@@ -462,4 +468,77 @@ class ActividadClienteController extends Controller
             }
         }
     }
+
+    public function masivoactividades()
+    {
+        //se llena un array con los datos de las listas desplegables para el excel con  los datos de bd
+        $datosParaExcel=$this->datosparaplantilla();
+       // Luego, actualiza el archivo Excel utilizando la clase de exportación
+        $export = new ActividadClienteExport($datosParaExcel);
+        $export->array();
+        $ruta =public_path('data/ActividadCliente/MasivoActividades.xlsx');
+        // Después de la actualización, descarga el archivo
+        return response()->download($ruta, 'MasivoActividades.xlsx');
+        
+    }
+
+    public function importExcel(Request $request)
+    {
+        //obtener el archivo  
+        $file = $request->file('masivo');
+        //validar si se cargo el archivo
+        if (!isset($file)) {
+                return back()->with('message2', 'Por favor, cargue el archivo correspondiente para continuar.')->with('color', 'warning');
+        }
+        $job = new ExcelActividadClienteBatchImport($file->getRealPath());
+        dispatch($job);
+        // Session::flash('file_upload_completed', true);
+            // Redireccionar a la vista de importación con un mensaje de éxito
+        return back();
+    }
+
+   private function datosparaplantilla(){
+        $actividades = Actividad::pluck('nombre','id')->toArray();
+        $responsables = Responsable::pluck('nombre','id')->toArray();
+        $empresas = Empresa::pluck('razon_social','id')->toArray();
+        $users = User::pluck('nombres','id')->toArray();
+        $clientes = EmpleadoCliente::pluck('nombres','id')->toArray();
+        $estados = EstadoActividad::pluck('nombre','id')->toArray();
+        // Combina los datos de todas las tablas en un solo array con subarrays
+        $datosParaExcel = [
+            'actividades' => [],
+            'responsables' => [],
+            'empresas' => [],
+            'clientes' => [],
+            'users' => [],
+            'estados' => [],
+        ];
+
+        foreach ($actividades as $id => $nombre) {
+            $datosParaExcel['actividades'][] = "$id-$nombre";
+        }
+
+        foreach ($responsables as $id => $nombre) {
+            $datosParaExcel['responsables'][] = "$id-$nombre";
+        }
+
+        foreach ($empresas as $id => $razonSocial) {
+            $datosParaExcel['empresas'][] = "$id-$razonSocial";
+        }
+
+        foreach ($clientes as $id => $nombres) {
+            $datosParaExcel['clientes'][] = "$id-$nombres";
+        }
+
+        foreach ($users as $id => $nombres) {
+            $datosParaExcel['users'][] = "$id-$nombres";
+        }
+
+        foreach ($estados as $id => $nombre) {
+            $datosParaExcel['estados'][] = "$id-$nombre";
+        }
+
+        return $datosParaExcel;
+   }
+
 }

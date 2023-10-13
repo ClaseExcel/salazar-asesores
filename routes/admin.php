@@ -46,6 +46,8 @@ Route::resource('requerimientos-cliente', RequerimientoClienteController::class)
 Route::get('requerimientos-cliente/download/{id}', [RequerimientoClienteController::class, 'download'])->name('requerimientos.cliente.download');
 Route::post('requerimientos-cliente/desisitir/{id}', [RequerimientoClienteController::class, 'desistir'])->name('requerimientos.cliente.desistir');
 
+Route::get('actividad_cliente/plantilla', [ActividadClienteController::class, 'masivoactividades'])->name('actividad_cliente.masivoactividades');
+Route::post('actividad_cliente/importExcel', [ActividadClienteController::class, 'importExcel'])->name('actividad_cliente.importExcel');
 Route::resource('actividad_cliente', ActividadClienteController::class)->except(['destroy']);
 
 Route::get('actividad_cliente/reporte/{id}', [ActividadClienteController::class, 'reporteIndex'])->name('reporte.index');
